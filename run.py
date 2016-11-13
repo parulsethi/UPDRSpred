@@ -21,14 +21,11 @@ def plot_feature_imp(model, X_train, feature_title):
     plt.subplots_adjust(bottom=0.22)
     plt.show()
 
-
 def plot_learning_curve(model, X, y):
     plt.figure()
-
     train_sizes, train_scores, test_scores = \
         learning_curve(model, X, y, train_sizes=np.linspace(0.1, 1, 10),
                        scoring="r2", cv=4)
-
     plt.plot(train_sizes, test_scores.mean(1), 'o-', color="g",
              label="Test data")
     plt.plot(train_sizes, train_scores.mean(1), 'o-', color="r",
@@ -38,7 +35,6 @@ def plot_learning_curve(model, X, y):
     plt.title('Learning curves')
     plt.legend(loc="best")
     plt.show()
-
 
 f_data = 'data.json'
 n_features = 18
